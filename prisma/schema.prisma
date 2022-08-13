@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model deliveryMan {
+model DeliveryMan {
   id         String       @id @default(uuid())
   username   String       @unique
   password   String
@@ -32,7 +32,7 @@ model Deliveries {
   id             String      @id @default(uuid())
   client         Clients     @relation(fields: [id_client], references: [id])
   id_client      String
-  deliveryman    deliveryMan @relation(fields: [id_deliveryman], references: [id])
+  deliveryman    DeliveryMan @relation(fields: [id_deliveryman], references: [id])
   id_deliveryman String
   delivered      DateTime?
   created_at     DateTime    @default(now())
