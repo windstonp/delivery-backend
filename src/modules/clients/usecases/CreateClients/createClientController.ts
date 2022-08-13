@@ -7,15 +7,9 @@ export class CreateClientController{
     const {username, password} = request.body;
 
     const createClientUseCase = new CreateClientUseCase();
+    
+    const result = await createClientUseCase.execute({username, password});
 
-    try{
-      const result = await createClientUseCase.execute({username, password});
-
-      return response.status(201).json(result)
-    }catch(error: any){
-      return response.status(400).json({
-        message: error.message
-      })
-    }
+    return response.status(201).json(result);
   }
 }
