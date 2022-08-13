@@ -5,6 +5,9 @@
   "repository": "git@github.com:windstonp/delivery-backend.git",
   "author": "windstonp <joaor4e@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "server": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts"
+  },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/express": "^4.17.13",
