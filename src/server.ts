@@ -9,7 +9,6 @@ app.use(json());
 app.use(router);
 
 app.use((error: Error, request: Request, response: Response, next: NextFunction)=>{
-  console.log(error);
   if(error instanceof Error){
     return response.status(400).json({
       message: error.message
