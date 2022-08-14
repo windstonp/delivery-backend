@@ -18,7 +18,7 @@ export async function ensureIsAuthenticated(request: Request, response: Response
 
   try{
     const {sub} = verify(token, process.env.AUTH_HASH_SECRET!) as IPayload;
-    request.id_client = sub;
+    request.id_user = sub;
     return next();
   }catch(error: any){
     return response.status(401).json({
